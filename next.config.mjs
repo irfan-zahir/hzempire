@@ -6,9 +6,14 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // images: {
+  //   unoptimized: true,
+  // },
+  output: 'export',
+  trailingSlash: true,
   images: {
-    unoptimized: true,
-  },
+    unoptimized: true
+  }
 }
 
 export default nextConfig
