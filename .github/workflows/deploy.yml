@@ -27,27 +27,16 @@ jobs:
           node-version: "20"
           cache: npm
       
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          static_site_generator: next
-      
       - name: Install dependencies
         run: npm install --legacy-peer-deps
       
-      - name: Build with Next.js
+      - name: Build Next.js
         run: npm run build
       
-      - name: List build output (debug)
-        run: |
-          echo "Listing root directory:"
-          ls -la
-          echo "Checking if out directory exists:"
-          ls -la out/ || echo "out directory not found"
-          echo "Checking if .next directory exists:"
-          ls -la .next/ || echo ".next directory not found"
+      - name: Add .nojekyll file
+        run: touch out/.nojekyll
       
-      - name: Upload artifact
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
