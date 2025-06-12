@@ -13,7 +13,9 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true
-  }
+  },
+  assetPrefix: '/hzempire',
+  basePath: '/hzempire'
 }
 
 export default nextConfig
